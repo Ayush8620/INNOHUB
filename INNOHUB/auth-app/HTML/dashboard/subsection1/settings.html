@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/CSS/dashboard/subsection/settings.css" />
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <input type="text" class="mobile-search" placeholder="Search..." />
+    <button class="mobile-search-btn">Search</button>
+    <a href="/HTML/dashboard/investor.html">Home / Dashboard</a>
+    <a href="/HTML/dashboard/subsection1/explore.html">Explore</a>
+    <a href="/HTML/dashboard/subsection1/pitch-requests.html">Pitch Requests</a>
+    <a href="/HTML/dashboard/subsection1/investment-opportunities.html">Your Investment</a>
+    <a href="/HTML/dashboard/subsection1/messages-chat.html">Messages / Chat</a>
+    <a href="/HTML/dashboard/subsection1/resources-documents.html">Resources / Documents</a>
+    <a href="/HTML/dashboard/subsection1/settings.html" class="active">Account</a>
+  </div>
+
+  <div class="dashboard">
+    <nav>
+      <div class="logo">
+        <img src="/img/logo.png" alt="Logo" />
+        <h1>Innohub</h1>
+      </div>
+      <div class="nav-icons">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="panel">
+        <h2>User Details</h2>
+        <div id="user-details"></div>
+        <div id="loading-spinner">Loading...</div>
+        <!-- Logout Button -->
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/JS/dashboard/subsection/settings.js"></script>
+</body>
+</html>

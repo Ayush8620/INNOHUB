@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    background: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.desktop-search {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+.desktop-search-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #1abc9c;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar {
+    background: #34495e;
+    width: 240px;
+    color: white;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+    /* Sidebar on top of the content */
+    transition: transform 0.3s ease;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #1abc9c;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #1abc9c;
+    font-weight: 600;
+}
+
+.dashboard {
+    flex: 1;
+    overflow-y: auto;
+    background: #ecf0f1;
+    margin-left: 240px;
+    /* To prevent content from being hidden behind sidebar */
+}
+
+.main-content {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.panel {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.quick-actions div {
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #1abc9c;
+    cursor: pointer;
+}
+
+.quick-actions div a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .idea-filter button {
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #1abc9c;
+    color: white;
+    cursor: pointer;
+}
+
+.idea-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    margin-top: 1rem;
+} */
+
+.Notifications {
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    overflow-y: auto;
+    gap: .5rem;
+}
+
+.Notifications-card {
+    min-width: 250px;
+    background: #e1e5e8;
+    margin-top: .5rem;
+    padding: .8rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.calendar-event,
+.verification,
+.mentor,
+.news,
+.tip,
+.deadline {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #ecf0f1;
+    border-radius: 6px;
+}
+
+.mobile-search {
+    display: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.mobile-search-btn {
+    display: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+#Premium{
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #e73838;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -440px;
+        /* Initially hide the sidebar off-screen */
+        width: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .dashboard {
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-search,
+    .mobile-search-btn {
+        display: block;
+    }
+
+    .desktop-search,
+    .desktop-search-btn {
+        display: none;
+    }
+
+    .sidebar.open {
+        transform: translateX(440px);
+        /* Slide the sidebar in */
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innohub startup</title>
+  <link rel="icon" type="icon" href="/img/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/CSS/dashboard/startup.css" />
+</head>
+
+<body>
+  <div class="sidebar" id="sidebar">
+    <input type="text" class="mobile-search" placeholder="Search..." />
+    <button class="mobile-search-btn">Search</button>
+    <a href="/HTML/dashboard/startup.html" class="active">Home / Dashboard</a>
+    <a href="/HTML/dashboard/subsection/explore.html">Explore</a>
+    <a href="/HTML/dashboard/subsection/my-ideas.html">My Ideas / Projects</a>
+    <a href="/HTML/dashboard/subsection/pitch-requests.html">Pitch Requests</a>
+    <a href="/HTML/dashboard/subsection/messages-chat.html">Messages / Chat</a>
+    <a href="/HTML/dashboard/subsection/resources-documents.html">Resources / Documents</a>
+    <a href="/HTML/dashboard/subsection/settings.html">Account</a>
+  </div>
+
+  <div class="dashboard">
+    <nav>
+      <div class="logo">
+        <img src="/img/logo.png" alt="Logo" />
+        <h1>Innohub</h1>
+      </div>
+      <div class="nav-icons">
+        <input type="text" class="desktop-search" placeholder="Search..." />
+        <button class="desktop-search-btn">Search</button>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="panel" id="user-info">
+        <div id="loading-spinner">Loading...</div>
+        <!-- Dynamic user info will be loaded here -->
+      </div>
+
+      <div class="panel quick-actions">
+        <h3>Quick Actions</h3>
+        <div><a href="/HTML/forms/idea-submission.html">Submit New Idea</a></div>
+        <div><a href="/HTML/dashboard/subsection/explore.html">Request Investment</a></div>
+        <div><a href="#">Schedule a Pitch</a></div>
+        <div><a href="#">Join a Team</a></div>
+      </div>
+
+      <div class="panel">
+        <h3>Notifications</h3>
+        <!-- <div class="idea-filter">
+          <button>Tech</button>
+          <button>Health</button>
+          <button>Real Estate</button>
+        </div> -->
+        <div class="Notifications">
+          <div class="Notifications-card">Notifications 1 </div>
+          <div class="Notifications-card">Notifications 1 </div>
+          <div class="Notifications-card">Notifications 1 </div>
+          <div class="Notifications-card">Notifications 1 </div>
+          <div class="Notifications-card">Notifications 1 </div>
+          <div class="Notifications-card">Notifications 1 </div>
+        </div>
+      </div>
+      
+      <div class="panel">
+        <h3>Your Activity Summary</h3>
+        <p>Ideas Submitted: <span id="ideas-count">Loading...</span></p>
+        <p>Investments Received: 2</p>
+        <p>Upcoming Pitches: 3</p>
+        <p>Team Join Requests: 1</p>
+      </div>
+      
+      <div class="panel">
+        <h3>Pitching Calendar</h3>
+        <div class="calendar-event">Pitch 1 - Online <a href="#">Join</a></div>
+        <div class="calendar-event">Pitch 2 - Venue <a href="#">View</a></div>
+      </div>
+
+      <div class="panel">
+        <h3>Verification Status</h3>
+        <div class="verification">Aadhaar: Verified</div>
+        <div class="verification">Investor: Unverified</div>
+        <button id="Premium">Upgrade to Premium</button>
+      </div>
+
+      <div class="panel">
+        <h3>Suggested Mentors / Advisors</h3>
+        <div class="mentor">Dr. Ramesh - AI Expert</div>
+      </div>
+
+      <div class="panel">
+        <h3>Latest News / Updates</h3>
+        <div class="news">Incubation Batch 2025 Starts Soon!</div>
+      </div>
+
+      <div class="panel">
+        <h3>Tips for Pitching</h3>
+        <div class="tip">Be clear and concise in your deck.</div>
+      </div>
+
+      <!-- <div class="panel">
+        <h3>Incubation Program Deadlines</h3>
+        <div class="deadline">Apply by May 15, 2025</div>
+      </div> -->
+    </div>
+  </div>
+
+  <script type="module" src="/JS/dashboard/startup.js"></script>
+  <script type="module" src="/JS/dashboard/common.js"></script>
+</body>
+
+</html>

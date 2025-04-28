@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innohub</title>
+  <link rel="icon" type="icon" href="/img/logo.png">
+  <link rel="stylesheet" href="/CSS/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="/img/logo.png" alt="Innohub Logo" />
+      <h1>Innohub</h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="/HTML/login/login.html">Login</a></li>
+        <li><a href="/HTML/login/register-verify.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section with Full Background Image -->
+  <section id="home" class="home">
+    <img src="/img/img1.jpg" alt="Innohub Logo" class="background-image">
+    <div class="hero-content">
+      <h1>Welcome to Innohub</h1>
+      <p>Fueling student innovation with mentorship, funding, and collaboration. Join our ecosystem today!</p>
+      <a href="/HTML/login/register-verify.html" class="register-btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About and Contact Us Side by Side -->
+  <section id="about-us" class="about-contact">
+    <div class="about">
+      <h2>About Us</h2>
+      <p>Innohub is a platform designed to support the growth of innovative student-led businesses. We provide mentorship, resources, and funding opportunities to help students bring their ideas to life.</p>
+    </div>
+
+    <div id="contact-us" class="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or would like to connect, feel free to reach out to us through the following channels:</p>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +123-456-7890</p>
+        <p><strong>Email:</strong> hello@reallygreatsite.com</p>
+        <p><strong>Address:</strong> 123 Anywhere St., Any City, 12345</p>
+      </div>
+
+      <div class="social-media">
+        <p><strong>Follow us on:</strong></p>
+        <ul>
+          <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+          <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+          <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      hamburger.innerHTML = navMenu.classList.contains("active") ? "&times;" : "&#9776;";
+    });
+  </script>
+
+</body>
+</html>

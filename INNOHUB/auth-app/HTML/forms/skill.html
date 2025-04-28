@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills & Qualifications</title>
+  <link rel="stylesheet" href="/CSS/forms/skill.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>User Skills & Qualifications</h2>
+    <form id="skillsForm">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="highestQualification">Highest Qualification</label>
+      <select id="highestQualification" name="highestQualification" required>
+        <option value="">-- Select --</option>
+        <option value="High School">High School</option>
+        <option value="Diploma">Diploma</option>
+        <option value="Bachelor's">Bachelor's</option>
+        <option value="Master's">Master's</option>
+        <option value="PhD">PhD</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="fieldOfStudy">Field of Study</label>
+      <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+
+      <label for="skills">Technical/Soft Skills</label>
+      <textarea id="skills" name="skills" placeholder="e.g., JavaScript, Communication, Project Management..." required></textarea>
+
+
+      <label for="experience">Years of Experience</label>
+      <input type="number" id="experience" name="experience" min="0" max="50">
+
+      <label for="certifications">Certifications (if any)</label>
+	  <textarea id="certifications" name="certifications" placeholder="e.g., AWS Certified Developer, PMP, etc."></textarea>
+
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- Firebase SDK and main JS -->
+  <script type="module" src="/JS/forms/skill.js"></script>
+</body>
+</html>
