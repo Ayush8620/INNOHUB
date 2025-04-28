@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  background: #2c3e50;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.desktop-search {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.desktop-search-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #1abc9c;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  background: #34495e;
+  width: 240px;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: #1abc9c;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1abc9c;
+  font-weight: 600;
+}
+
+.dashboard {
+  flex: 1;
+  overflow-y: auto;
+  background: #ecf0f1;
+  margin-left: 240px;
+}
+
+.main-content {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.resource-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.resource-card {
+  background: #bdc3c7;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resource-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+}
+
+.resource-card button {
+  padding: 6px 12px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.resource-card button a{
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-search {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.mobile-search-btn {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: #1abc9c;
+  color: white;
+  border: none;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -440px;
+    width: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .dashboard {
+    margin-left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-search,
+  .mobile-search-btn {
+    display: block;
+  }
+
+  .desktop-search,
+  .desktop-search-btn {
+    display: none;
+  }
+
+  .sidebar.open {
+    transform: translateX(440px);
+  }
+
+  .resource-list {
+    grid-template-columns: 1fr;
+  }
+}

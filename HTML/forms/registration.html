@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Form</title>
+  <link rel="stylesheet" href="/CSS/forms/registration.css">
+</head>
+
+<body>
+  <form class="form-container">
+    <h2>Registration Form</h2>
+
+    <label for="name">1. Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="role">2. Register as</label>
+    <select id="role" name="role" required>
+      <option value="">--Please choose an option--</option>
+      <option value="Investor">Investor</option>
+      <option value="Idea-Pitcher-Startup">Startup/Idea Pitcher</option>
+      <option value="Learner">Learner/Team Seeker</option>
+    </select>
+
+    <label for="dob">3. DOB</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="aadhaar">4. Aadhaar Number</label>
+    <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" required
+      placeholder="12-digit Aadhar number">
+
+    <label for="pan">5. PAN Number</label>
+    <input type="text" id="pan" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" maxlength="10" required
+      placeholder="ABCDE1234F">
+
+    <label for="portfolio">6. Portfolio / CV (Upload File)</label>
+    <input type="file" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx" required>
+
+    <label for="linkedin">7. LinkedIn Account Link</label>
+    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" required>
+
+    <button type="submit">Register</button>
+  </form>
+  
+  <script type="module" src="/JS/forms/registration.js"></script>
+</body>
+
+</html>

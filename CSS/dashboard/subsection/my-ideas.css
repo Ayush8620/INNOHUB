@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  background: #2c3e50;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.desktop-search {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.desktop-search-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #1abc9c;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  background: #34495e;
+  width: 240px;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: #1abc9c;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1abc9c;
+  font-weight: 600;
+}
+
+.dashboard {
+  flex: 1;
+  overflow-y: auto;
+  background: #ecf0f1;
+  margin-left: 240px;
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+#looks{
+  /* border: 2px solid red; */
+  margin-top: .5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.idea-card {
+  background: #e1e5e8;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.idea-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.idea-card p {
+  margin-bottom: 0.5rem;
+}
+
+.idea-card button {
+  margin-right: 10px;
+  margin-top: .5rem;
+  padding: 6px 12px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.idea-card button:hover {
+  background-color: #16a085;
+}
+
+.mobile-search {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.mobile-search-btn {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: #1abc9c;
+  color: white;
+  border: none;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -440px;
+    width: 50%;
+  }
+
+  .sidebar.open {
+    transform: translateX(440px);
+  }
+
+  .dashboard {
+    margin-left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-search,
+  .mobile-search-btn {
+    display: block;
+  }
+
+  .desktop-search,
+  .desktop-search-btn {
+    display: none;
+  }
+}
+
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button in modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* View Idea Details (For View Modal) */
+#viewModal #viewIdeaDetails p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+/* Edit Idea Form Styling */
+#editIdeaForm label {
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+  color: #2c3e50;
+}
+
+#editIdeaForm input,
+#editIdeaForm textarea,
+#editIdeaForm select {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+}
+
+#editIdeaForm input:focus,
+#editIdeaForm textarea:focus,
+#editIdeaForm select:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.3);
+}
+
+/* Submit Button (Inside Modal) */
+#editIdeaForm button {
+  padding: 10px 20px;
+  background-color: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+#editIdeaForm button:hover {
+  background-color: #16a085;
+}
+
+/* Mobile Responsiveness for Modals */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .close {
+    font-size: 25px;
+  }
+}
